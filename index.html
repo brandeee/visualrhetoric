@@ -194,4 +194,37 @@
 			</script>
 
 	</body>
+	<script>
+        var password = "CHANGE ME";
+
+        var div = document.createElement("div");
+        div.style.backgroundColor = "#ffffff";
+        div.style.position = "fixed";
+        div.style.width = "100%";
+        div.style.height = "100%";
+        div.style.top = "0px";
+        div.style.left = "0px";
+        div.style.zIndex = 1000;
+
+        var label = document.createElement("label");
+        label.innerHTML = "Password:";
+        div.appendChild(label);
+
+        var input = document.createElement("input");
+        div.appendChild(input);
+
+        var button = document.createElement("button");
+        button.innerHTML = "Login"
+        button.onclick = function() {
+            if (input.value == password)
+            {
+                console.log("login");
+                div.style.visibility = "none";
+                document.body.removeChild(div);
+            }
+        };
+        div.appendChild(button);
+
+        document.body.appendChild(div);
+    </script>
 </html>
